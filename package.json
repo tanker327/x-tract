@@ -40,11 +40,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yourusername/x-tract.git"
+    "url": "git+https://github.com/tanker327/x-tract.git"
   },
-  "homepage": "https://github.com/yourusername/x-tract#readme",
+  "homepage": "https://github.com/tanker327/x-tract#readme",
   "bugs": {
-    "url": "https://github.com/yourusername/x-tract/issues"
+    "url": "https://github.com/tanker327/x-tract/issues"
   },
   "devDependencies": {
     "@types/node": "^24.10.1",

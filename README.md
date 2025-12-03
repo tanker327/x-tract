@@ -288,7 +288,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## Support
 
-For issues and questions, please [open an issue](https://github.com/yourusername/x-tract/issues).
+For issues and questions, please [open an issue](https://github.com/tanker327/x-tract/issues).
 
 ---
 
