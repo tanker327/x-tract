@@ -3,3 +3,13 @@ dist
 .DS_Store
 coverage
 .env
+
+# Debug and test output files
+debug_output.*
+test_output.*
+post-*.json
+# Ignore numbered markdown files (generated test outputs)
+/[0-9]*.md
+
+# Example results folder
+examples/results/

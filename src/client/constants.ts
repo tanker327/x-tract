@@ -1,13 +1,37 @@
+/**
+ * API constants for Twitter/X platform
+ */
+
+/**
+ * Public bearer token for guest authentication
+ * This is a publicly available token used by the Twitter web client
+ */
 export const PUBLIC_BEARER_TOKEN =
-  'AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA';
+  "AAAAAAAAAAAAAAAAAAAAANRILgAAAAAAnNwIzUejRCOuH5E6I8xnZz4puTs%3D1Zv7ttfk8LF81IUq16cHjhLTvJu4FA33AGWWjCpTnA";
 
-export const GUEST_ACTIVATE_URL = 'https://api.twitter.com/1.1/guest/activate.json';
+/**
+ * Guest activation endpoint URL
+ */
+export const GUEST_ACTIVATE_URL =
+  "https://api.twitter.com/1.1/guest/activate.json";
 
-export const GRAPHQL_URL = 'https://twitter.com/i/api/graphql';
+/**
+ * GraphQL API base URL
+ */
+export const GRAPHQL_URL = "https://twitter.com/i/api/graphql";
 
-export const TWEET_RESULT_BY_REST_ID = {
-  queryId: 'kLXoXTloWpv9d2FSXRg-Tg',
-  operationName: 'TweetResultByRestId',
+/**
+ * User agent string to use for API requests
+ */
+export const USER_AGENT =
+  "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36";
+
+/**
+ * Configuration for the PostResultByRestId GraphQL operation
+ */
+export const POST_RESULT_BY_REST_ID = {
+  queryId: "kLXoXTloWpv9d2FSXRg-Tg",
+  operationName: "TweetResultByRestId",
   features: {
     creator_subscriptions_tweet_preview_api_enabled: true,
     premium_content_api_read_enabled: false,
@@ -48,8 +72,7 @@ export const TWEET_RESULT_BY_REST_ID = {
     withArticlePlainText: false,
     withGrokAnalyze: false,
     withDisallowedReplyControls: false,
+    withPayments: true,
+    withAuxiliaryUserLabels: false,
   },
 };
-
-export const USER_AGENT =
-  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
