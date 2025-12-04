@@ -1,6 +1,6 @@
 {
   "name": "x-tract",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A TypeScript library for extracting Twitter/X post data with automatic URL expansion and rich content support",
   "type": "module",
   "main": "./dist/index.cjs",
