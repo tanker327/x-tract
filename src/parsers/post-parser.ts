@@ -65,7 +65,18 @@ export function parsePost(post: Post): PostData {
     post.quoted_status_result?.result &&
     post.quoted_status_result.result.rest_id
   ) {
-    quotedPost = parsePost(post.quoted_status_result.result);
+    try {
+      quotedPost = parsePost(post.quoted_status_result.result);
+    } catch (error) {
+      console.error(
+        `[ERROR] Failed to parse quoted post for ${post.rest_id}:`,
+        {
+          quotedPostId: post.quoted_status_result.result.rest_id,
+          error: error instanceof Error ? error.message : error,
+        },
+      );
+      quotedPost = undefined;
+    }
   }
 
   return {
