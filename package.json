@@ -44,11 +44,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tanker327/x-tract.git"
+    "url": "git+https://github.com/tanker327/xtract-js.git"
   },
-  "homepage": "https://github.com/tanker327/x-tract#readme",
+  "homepage": "https://github.com/tanker327/xtract-js#readme",
   "bugs": {
-    "url": "https://github.com/tanker327/x-tract/issues"
+    "url": "https://github.com/tanker327/xtract-js/issues"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.2",
