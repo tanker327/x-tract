@@ -51,8 +51,10 @@ export type LegacyPost = z.infer<typeof LegacyPostSchema>;
 
 /**
  * Forward declaration for recursive post schema (for quoted posts)
+ * Note: Using z.ZodTypeAny due to recursive type limitation
  */
-export const PostSchema: z.ZodType<Post> = z.lazy(() =>
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const PostSchema: z.ZodType<any> = z.lazy(() =>
   z.union([StandardPostSchema, ArticlePostSchema]),
 );
 
