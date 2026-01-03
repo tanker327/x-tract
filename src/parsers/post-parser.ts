@@ -33,9 +33,9 @@ export function parsePost(post: Post): PostData {
   let createdAt = "";
 
   // Extract hashtags from legacy entities
-  const legacy = (post as any).legacy as LegacyPost;
+  const legacy = (post as unknown as { legacy: LegacyPost }).legacy;
   const hashtags: string[] =
-    legacy?.entities?.hashtags?.map((h: any) => h.text) || [];
+    legacy?.entities?.hashtags?.map((h: { text: string }) => h.text) || [];
 
   // Check if this is an article post or standard post
   if ("article" in post && post.article) {
@@ -119,10 +119,10 @@ function parseStandardPost(post: StandardPost): {
   const urlEntities = noteTweetUrls.length > 0 ? noteTweetUrls : legacyUrls;
 
   const mediaEntities = post.legacy.entities?.media || [];
-  text = expandUrls(text, urlEntities as any, mediaEntities);
+  text = expandUrls(text, urlEntities, mediaEntities);
 
   // Extract media
-  const { images, videos } = extractMediaUrls(mediaEntities as any);
+  const { images, videos } = extractMediaUrls(mediaEntities);
 
   return {
     text,
@@ -144,7 +144,8 @@ function parseArticlePost(post: ArticlePost): {
   let parsed = parseArticle(articleResult);
 
   // Resolve media URLs if media_entities exist
-  const mediaEntities = (articleResult.result as any).media_entities;
+  const mediaEntities = (articleResult.result as Record<string, unknown>)
+    .media_entities as Array<Record<string, unknown>> | undefined;
   if (mediaEntities) {
     parsed = resolveArticleMediaUrls(parsed, mediaEntities);
   }
@@ -187,7 +188,10 @@ function parseArticlePost(post: ArticlePost): {
 /**
  * Formats an article block into markdown
  */
-function formatArticleBlock(block: ParsedArticleBlock, entityMap: any): string {
+function formatArticleBlock(
+  block: ParsedArticleBlock,
+  entityMap: Record<string, unknown>,
+): string {
   if (block.type === "text") {
     const text = applyInlineStyles(
       block.text,

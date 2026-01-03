@@ -9,7 +9,7 @@
 export interface DraftEntity {
   type: string;
   mutability: "MUTABLE" | "IMMUTABLE" | "SEGMENTED";
-  data: any;
+  data: Record<string, unknown>;
 }
 
 /**
@@ -55,7 +55,7 @@ export interface DraftBlock {
   depth: number;
   inlineStyleRanges: InlineStyleRange[];
   entityRanges: EntityRange[];
-  data?: any;
+  data?: Record<string, unknown>;
 }
 
 /**

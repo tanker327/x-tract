@@ -22,7 +22,7 @@ import {
  * @returns Parsed article structure
  */
 export function parseArticle(
-  articleResult: { result: any } | any,
+  articleResult: { result: Record<string, unknown> } | Record<string, unknown>,
 ): ParsedArticle {
   const result = articleResult.result || articleResult;
   const title = result.title || "";

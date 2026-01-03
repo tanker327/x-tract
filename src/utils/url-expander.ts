@@ -20,7 +20,7 @@ export interface UrlEntity {
 export function expandUrls(
   text: string,
   urlEntities: UrlEntity[] = [],
-  mediaEntities: any[] = [],
+  mediaEntities: Array<{ url?: string }> = [],
 ): string {
   // Build a map of t.co URLs to expanded URLs
   const urlMap = new Map<string, string>();

@@ -52,7 +52,7 @@ export type LegacyPost = z.infer<typeof LegacyPostSchema>;
 /**
  * Forward declaration for recursive post schema (for quoted posts)
  */
-export const PostSchema: z.ZodType<any> = z.lazy(() =>
+export const PostSchema: z.ZodType<Post> = z.lazy(() =>
   z.union([StandardPostSchema, ArticlePostSchema]),
 );
 
