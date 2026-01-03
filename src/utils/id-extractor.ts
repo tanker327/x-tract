@@ -30,7 +30,7 @@ export function extractPostId(idOrUrl: string): string {
     if (articleIndex !== -1 && parts[articleIndex + 1]) {
       return parts[articleIndex + 1];
     }
-  } catch (e) {
+  } catch {
     // Not a valid URL, maybe a partial path?
     const match = idOrUrl.match(/(?:status|article)\/(\d+)/);
     if (match) {

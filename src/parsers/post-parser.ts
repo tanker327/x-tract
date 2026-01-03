@@ -24,7 +24,7 @@ export function parsePost(post: Post): PostData {
   let text = "";
   let images: string[] = [];
   let videos: string[] = [];
-  let stats: PostStats = {
+  const stats: PostStats = {
     likes: 0,
     reposts: 0,
     replies: 0,
@@ -189,7 +189,7 @@ function parseArticlePost(post: ArticlePost): {
  */
 function formatArticleBlock(block: ParsedArticleBlock, entityMap: any): string {
   if (block.type === "text") {
-    let text = applyInlineStyles(
+    const text = applyInlineStyles(
       block.text,
       block.inlineStyleRanges,
       block.entityRanges,
